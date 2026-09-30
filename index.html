@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мектеп Ресурстары және Оқу Материалдарының Базасы</title>
+    <!-- FontAwesome иконкалар кітапханасы -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Үстіңгі навигация (Header) -->
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="logo-text">
+                <h1>МЕКТЕП РЕСУРСТАРЫ ЖӘНЕ ОҚУ МАТЕРИАЛДАРЫНЫҢ БАЗАСЫ</h1>
+                <span>RESOURCE SHARING HUB</span>
+            </div>
+        </div>
+        <div class="user-actions">
+            <button class="profile-btn" title="Профиль"><i class="fa-solid fa-user"></i></button>
+            <button class="upload-btn" id="openModalBtn"><i class="fa-solid fa-upload"></i> Жүктеу</button>
+        </div>
+    </header>
+
+    <!-- 2. Негізгі іздеу баны (Search Banner) -->
+    <section class="search-banner">
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Іздеу: Пән, сынып, материал атауы...">
+        </div>
+    </section>
+
+    <!-- 3. Негізгі контент (Main Content Grid) -->
+    <div class="container main-layout">
+        
+        <!-- Сол жақ: Пәндер мен Материалдар -->
+        <main class="content-area">
+            
+            <!-- Танымал пәндер секциясы -->
+            <section class="section">
+                <h2 class="section-title">ТАНЫМАЛ ПӘНДЕР</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card card-teal" data-subject-btn="Математика">
+                        <i class="fa-solid fa-calculator card-icon"></i>
+                        <div>
+                            <h3>Математика</h3>
+                            <p>145 файл</p>
+                        </div>
+                    </div>
+                    <div class="subject-card card-navy" data-subject-btn="Физика">
+                        <i class="fa-solid fa-atom card-icon"></i>
+                        <div>
+                            <h3>Физика</h3>
+                            <p>21 файл</p>
+                        </div>
+                    </div>
+                    <div class="subject-card card-green" data-subject-btn="Тарих">
+                        <i class="fa-solid fa-globe card-icon"></i>
+                        <div>
+                            <h3>Тарих</h3>
+                            <p>101 файл</p>
+                        </div>
+                    </div>
+                    <div class="subject-card card-purple" data-subject-btn="Қазақ тілі">
+                        <i class="fa-solid fa-book card-icon"></i>
+                        <div>
+                            <h3>Қазақ тілі</h3>
+                            <p>137 файл</p>
+                        </div>
+                    </div>
+                    <div class="subject-card card-light-green" data-subject-btn="Биология">
+                        <i class="fa-solid fa-dna card-icon"></i>
+                        <div>
+                            <h3>Биология</h3>
+                            <p>57 файл</p>
+                        </div>
+                    </div>
+                    <div class="subject-card card-cyan" data-subject-btn="Химия">
+                        <i class="fa-solid fa-flask card-icon"></i>
+                        <div>
+                            <h3>Химия</h3>
+                            <p>29 файл</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ең соңғы қосылған материалдар -->
+            <section class="section">
+                <h2 class="section-title">ЕҢ СОҢҒЫ ҚОСЫЛҒАН МАТЕРИАЛДАР</h2>
+                <div class="materials-grid" id="materialsGrid">
+                    
+                    <!-- Карточка 1 -->
+                    <div class="material-card" data-subject="Математика" data-class="8" data-type="Оқулық">
+                        <div class="card-header">
+                            <div class="card-type-icon icon-teal">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div class="card-title-group">
+                                <h3>Алгебра 8 сынып</h3>
+                                <span>(PDF Оқулық)</span>
+                            </div>
+                        </div>
+                        <p class="card-desc">Алгебра 8 сыныпқа арналған толық оқулық пен теориялық материалдар.</p>
+                        <p class="card-meta">Қанып 8 сынып, PDF Оқулық</p>
+                        <div class="card-footer">
+                            <span class="downloads"><i class="fa-solid fa-download"></i> <span class="count">145</span></span>
+                            <button class="download-btn" data-url="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" data-filename="Algebra_8_synyp.pdf">ЖҮКТЕУ</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="material-card" data-subject="Физика" data-class="8" data-type="Зертханалық">
+                        <div class="card-header">
+                            <div class="card-type-icon icon-navy">
+                                <i class="fa-solid fa-file-word"></i>
+                            </div>
+                            <div class="card-title-group">
+                                <h3>Физика зертханалық</h3>
+                                <span>(DOCX)</span>
+                            </div>
+                        </div>
+                        <p class="card-desc">Физика зертханалық жұмыстарының нұсқаулықтары мен тапсырмалары.</p>
+                        <p class="card-meta">Қанып 8 сынып, DOCX</p>
+                        <div class="card-footer">
+                            <span class="downloads"><i class="fa-solid fa-download"></i> <span class="count">312</span></span>
+                            <button class="download-btn" data-url="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" data-filename="Fizika_Zertxana.pdf">ЖҮКТЕУ</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="material-card" data-subject="Тарих" data-class="9" data-type="Презентация">
+                        <div class="card-header">
+                            <div class="card-type-icon icon-green">
+                                <i class="fa-solid fa-file-powerpoint"></i>
+                            </div>
+                            <div class="card-title-group">
+                                <h3>Қазақстан тарихы 9 сынып</h3>
+                                <span>(Презентация)</span>
+                            </div>
+                        </div>
+                        <p class="card-desc">Қазақстан тарихы 9 сынып презентациялық көрнекі материалдары.</p>
+                        <p class="card-meta">Қанып 9 сынып, Презентация</p>
+                        <div class="card-footer">
+                            <span class="downloads"><i class="fa-solid fa-download"></i> <span class="count">131</span></span>
+                            <button class="download-btn" data-url="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" data-filename="Kozakstan_Tarihy_9.pdf">ЖҮКТЕУ</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Оң жақ: Сүзгілеу панелі (Filter Sidebar) -->
+        <aside class="sidebar">
+            <div class="filter-box">
+                <div class="filter-group">
+                    <label>Сыныптар</label>
+                    <select id="classFilter">
+                        <option value="all">Барлық сыныптар</option>
+                        <option value="5">5 сынып</option>
+                        <option value="6">6 сынып</option>
+                        <option value="7">7 сынып</option>
+                        <option value="8">8 сынып</option>
+                        <option value="9">9 сынып</option>
+                        <option value="10">10 сынып</option>
+                        <option value="11">11 сынып</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Пәндер</label>
+                    <select id="subjectFilter">
+                        <option value="all">Барлық пәндер</option>
+                        <option value="Математика">Математика</option>
+                        <option value="Физика">Физика</option>
+                        <option value="Тарих">Тарих</option>
+                        <option value="Қазақ тілі">Қазақ тілі</option>
+                        <option value="Биология">Биология</option>
+                        <option value="Химия">Химия</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Материал түрі</label>
+                    <select id="typeFilter">
+                        <option value="all">Барлығы</option>
+                        <option value="Оқулық">Оқулық</option>
+                        <option value="Зертханалық">Зертханалық жұмыс</option>
+                        <option value="Презентация">Презентация</option>
+                    </select>
+                </div>
+
+                <button id="resetFiltersBtn" class="reset-btn"><i class="fa-solid fa-rotate-left"></i> Сүзгілерді тазалау</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- 4. Жүктеу модальді терезесі (Modal Form) -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Жаңа материал қосу</h2>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label>Материал атауы</label>
+                    <input type="text" id="inputTitle" required placeholder="Мысалы: Алгебра 8 сынып">
+                </div>
+                <div class="form-group">
+                    <label>Пән</label>
+                    <select id="inputSubject">
+                        <option value="Математика">Математика</option>
+                        <option value="Физика">Физика</option>
+                        <option value="Тарих">Тарих</option>
+                        <option value="Қазақ тілі">Қазақ тілі</option>
+                        <option value="Биология">Биология</option>
+                        <option value="Химия">Химия</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Сынып</label>
+                        <select id="inputClass">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8" selected>8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Форматы/Түрі</label>
+                        <select id="inputType">
+                            <option value="Оқулық">Оқулық</option>
+                            <option value="Зертханалық">Зертханалық</option>
+                            <option value="Презентация">Презентация</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Компьютерден файл таңдау инпуты -->
+                <div class="form-group">
+                    <label>Файлды таңдаңыз (PDF, DOCX, PPTX...)</label>
+                    <input type="file" id="inputFile" required accept=".pdf,.docx,.doc,.pptx,.ppt,.txt">
+                </div>
+
+                <div class="form-group">
+                    <label>Қысқаша сипаттамасы</label>
+                    <textarea id="inputDesc" rows="2" placeholder="Материал туралы сипаттама..."></textarea>
+                </div>
+                <button type="submit" class="submit-form-btn">Сақтау және жүктеу</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
